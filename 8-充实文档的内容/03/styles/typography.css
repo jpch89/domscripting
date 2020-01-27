@@ -1,10 +1,10 @@
 body {
-    font-family: "Helvetica", "Arial", sans-serif;
-    font-size: 10px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 10px;
 }
 
-abbr{
-    text-decoration: none;
-    border: 0;
-    font-style: normal;
+abbr {
+  text-decoration: none;
+  border: 0;
+  font-style: normal;
 }
