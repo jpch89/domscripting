@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example</title>
+  <script>
+    window.onload = function () {
+      var para = document.getElementById('example')
+      alert(typeof para.nodeName) // string
+      alert(typeof para.style) // object
+      alert('The color is ' + para.style.color) // The color is grey
+      alert('The font family is ' + para.style.fontFamily) // The font family is Arial, sans-serif
+      alert('The font size is ' + para.style.fontSize) // The font size is 1em
+    }
+  </script>
+</head>
+
+<body>
+  <!-- <p id="example" style="color: grey; font-family: 'Arial', sans-serif;"> -->
+  <!-- <p id="example" style="color: #999999; font-family: 'Arial', sans-serif;"> -->
+  <!-- <p id="example" style="color: grey; font-family: 'Arial', sans-serif; font-size: 1em;"> -->
+  <p id="example" style="color: grey; font: 12px 'Arial',sans-serif;">
+    An example of a paragraph
+  </p>
+</body>
+
+</html>
