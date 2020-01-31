@@ -170,3 +170,44 @@ function prepareSlideshow() {
 }
 
 addLoadEvent(prepareSlideshow)
+
+function showSection(id) {
+  var sections = document.getElementsByTagName('section')
+  for (var i = 0; i < sections.length; i++) {
+    if (sections[i].getAttribute('id') != id) {
+      sections[i].style.display = 'none'
+    } else {
+      sections[i].style.display = 'block'
+    }
+  }
+}
+
+function prepareInternalnav() {
+  if (!document.getElementsByTagName) return false
+  if (!document.getElementById) return false
+  var articles = document.getElementsByTagName('article')
+  if (articles.length == 0) return false
+  var navs = articles[0].getElementsByTagName('nav')
+  if (navs.length == 0) return false
+  var nav = navs[0]
+  // 找到了 article 元素下面的 nav 元素里面的所有 a 标签，遍历它
+  var links = nav.getElementsByTagName('a')
+  for (var i = 0; i < links.length; i++) {
+    // 通过 a 标签的 href 获取了对应的 id
+    var sectionId = links[i].getAttribute('href').split('#')[1]
+    // 找不到这个 id，就进行下一次循环
+    if (!document.getElementById(sectionId)) continue
+    // 初始化的时候，把每个 section 都隐藏起来
+    document.getElementById(sectionId).style.display = 'none'
+    // sectionId 是局部变量，prepareInternalnav 执行完毕之后就消失了
+    // 为了在 a 标签触发事件的时候它还在，给它绑定一个 destination 属性
+    links[i].destination = sectionId
+    links[i].onclick = function() {
+      showSection(this.destination)
+      // 取消浏览器默认行为
+      return false
+    }
+  }
+}
+
+addLoadEvent(prepareInternalnav)
