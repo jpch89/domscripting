@@ -95,3 +95,32 @@ article img {
   border-width: 0;
   outline-width: 0;
 }
+
+#imagegallery li {
+  display: inline;
+}
+
+/* 表格样式 */
+td {
+  padding: 0.5em 3em;
+}
+
+/* definition list 样式 */
+dl {
+  overflow: hidden;
+}
+dt {
+  float: left;
+}
+dd {
+  float: left;
+}
+
+/* 表单样式 */
+label {
+  display: block;
+}
+
+fieldset {
+  border: 0;
+}

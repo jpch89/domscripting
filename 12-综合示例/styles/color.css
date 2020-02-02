@@ -94,3 +94,28 @@ header nav a.here:active {
 #contact header {
   background-image: url(../images/drummer.gif);
 }
+
+/* 表格样式 */
+th {
+  color: #edc;
+  background-color: #455;
+}
+tr td {
+  color: #223;
+  background-color: #eb6;
+}
+
+/* 表格高亮 */
+tr.odd td {
+  color: #223;
+  background-color: #ec8;
+}
+tr.highlight td {
+  color: #223;
+  background-color: #cba;
+}
+
+/* 占位符颜色 */
+input.placeholder {
+  color: grey;
+}
